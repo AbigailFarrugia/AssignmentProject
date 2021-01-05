@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         //When spacebar is clicked the character will jump on the first platform and the game starts
+        
     }
 
     // Update is called once per frame
