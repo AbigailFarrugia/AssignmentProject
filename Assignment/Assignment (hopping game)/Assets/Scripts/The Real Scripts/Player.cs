@@ -31,11 +31,7 @@ public class Player : MonoBehaviour
         {
             velocity.x = 0f;
             rb.velocity = velocity;
-        }
-
-
-        if (isGrounded)
-        {
+        
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 Jump();
@@ -56,15 +52,12 @@ public class Player : MonoBehaviour
 
         Vector2 velocity = rb.velocity;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, GroundLayer);
-        if (!isGrounded)
-        {
-            Debug.Log("airborne");
-        }
+
         distanceTravelled += Vector3.Distance(transform.position, lastPosition);
 
         lastPosition = transform.position;
 
-        if (distanceTravelled > 1f)
+        if (distanceTravelled >= 2f)
         {
 
             if (isLeft)
