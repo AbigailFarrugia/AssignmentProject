@@ -64,11 +64,13 @@ public class Player : MonoBehaviour
             {
                 velocity.x = -movement;
                 rb.velocity = velocity;
+               // rb.AddForce(velocity);
             }
             else if (!isLeft)
             {
                 velocity.x = movement;
                 rb.velocity = velocity;
+               // rb.AddForce(velocity);
             }
         }
 
