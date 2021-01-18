@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
@@ -87,5 +88,14 @@ public class Player : MonoBehaviour
         lastPosition = transform.position;
 
         rb.velocity = Vector2.up * jumpForce;
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void StillOnPlatform()
+    {
+        //_sittingOnPlatform
     }
 }

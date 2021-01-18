@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3897598318920732405}
   - component: {fileID: 3897598318920732404}
   - component: {fileID: 3897598318920732395}
+  - component: {fileID: -2355535723172904072}
   m_Layer: 0
   m_Name: Ledges_Plat A
   m_TagString: Untagged
@@ -108,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.57, y: 1.94}
   m_EdgeRadius: 0
+--- !u!114 &-2355535723172904072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897598318920732394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96818d012639f6b418401a44e9a837a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
