@@ -22,12 +22,12 @@ public class LevelGenerator : MonoBehaviour
 
     void Start()
     {
-        prefabList.Add(StonePlatformPrefab);
-        prefabList.Add(GrassPlatformPrefab);
-        prefabList.Add(BreakableGrassPlatformPrefab);
-        prefabList.Add(CloudPlatformPrefab);
-        prefabList.Add(GhostPlatformPrefab);
-        prefabIndex = UnityEngine.Random.Range(0, 5);
+        prefabList.Add(StonePlatformPrefab);//40
+        prefabList.Add(GrassPlatformPrefab);//20
+        prefabList.Add(BreakableGrassPlatformPrefab);//20
+        prefabList.Add(GhostPlatformPrefab);//10
+        prefabList.Add(CloudPlatformPrefab);//10
+        prefabIndex = UnityEngine.Random.Range(0, 4);
 
         // loop for the amount of levels
         for (int i = 0; i < numberOfLevels; i++)
@@ -35,9 +35,13 @@ public class LevelGenerator : MonoBehaviour
             //loop for the amount of platforms 
             for (int j = 0; j < numberOfPlatforms; j++)
             {
+                var _i = i /2;
                 if (i < 5)
                 {
-                    prefabIndex = UnityEngine.Random.Range(0, i);
+                    
+                    //
+                    prefabIndex = UnityEngine.Random.Range(0, _i);
+
                 }
                 else
                 {
@@ -66,7 +70,8 @@ public class LevelGenerator : MonoBehaviour
             {
                 if (i < 5)
                 {
-                    prefabIndex = UnityEngine.Random.Range(0, i);
+                    var _i = i /2;
+                    prefabIndex = UnityEngine.Random.Range(0, _i);
                 }
                 else
                 {

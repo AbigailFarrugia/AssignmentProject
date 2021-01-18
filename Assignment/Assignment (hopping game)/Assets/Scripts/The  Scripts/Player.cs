@@ -15,7 +15,8 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     public Transform groundCheck;
     public float movement = 3.5f;
-
+    private float safePos;
+    private float fallingDistance;
     // Use this for initialization
     void Start()
     {
@@ -32,7 +33,7 @@ public class Player : MonoBehaviour
         {
             velocity.x = 0f;
             rb.velocity = velocity;
-        
+
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 Jump();
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour
                 isLeft = true;
             }
         }
+
 
     }
 
@@ -60,23 +62,42 @@ public class Player : MonoBehaviour
 
         if (distanceTravelled >= 2f)
         {
-
             if (isLeft)
             {
                 velocity.x = -movement;
                 rb.velocity = velocity;
-               // rb.AddForce(velocity);
+                // rb.AddForce(velocity);
             }
             else if (!isLeft)
             {
                 velocity.x = movement;
                 rb.velocity = velocity;
-               // rb.AddForce(velocity);
+                // rb.AddForce(velocity);
+            }
+        }
+
+        if (safePos > transform.position.y)
+        {
+            fallingDistance = safePos - transform.position.y;
+            if (fallingDistance > 1.5f)
+            {
+                GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Platform");
+
+                foreach (GameObject obj in allObjects)
+                {
+                    Destroy(obj);
+
+                }
+            }
+            if (fallingDistance > 6f)
+            {
+                RestartLevel();
             }
         }
 
         if (isGrounded)
         {
+            safePos = transform.position.y;
             distanceTravelled = 0;
         }
     }
@@ -84,9 +105,6 @@ public class Player : MonoBehaviour
     void Jump()
     {
         Vector2 velocity = rb.velocity;
-
-        lastPosition = transform.position;
-
         rb.velocity = Vector2.up * jumpForce;
     }
 
@@ -94,6 +112,9 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+
+
     public void StillOnPlatform()
     {
         //_sittingOnPlatform
