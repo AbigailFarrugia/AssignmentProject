@@ -23,14 +23,14 @@ public class GhostPlatformScript : MonoBehaviour
     void Pulsate()
     {
 
-        time = Mathf.PingPong(Time.time, 1);
+        time = Mathf.PingPong(Time.time, 2);
 
-        if (time < 0.5f)
+        if (time < 1f)
         {
             BrokenPlatformPrefab.GetComponent<Renderer>().enabled = false;
             BrokenPlatformPrefab.GetComponent<Collider2D>().enabled = false;
         }
-        else if (time > 0.5f)
+        else if (time > 1f)
         {
             BrokenPlatformPrefab.GetComponent<Renderer>().enabled = true;
             BrokenPlatformPrefab.GetComponent<Collider2D>().enabled = true;

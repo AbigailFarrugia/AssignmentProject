@@ -22,8 +22,9 @@ public class ScoreKeeper : MonoBehaviour
     public void IncrementScore()
     {
         //takeing the _currentscore + 1
-        currentScore++;
+
         Text ScoreText = GetComponent<Text>();
         ScoreText.text = "Score: " + currentScore.ToString();
+        currentScore++;
     }
 }
