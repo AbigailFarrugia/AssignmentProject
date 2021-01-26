@@ -1123,6 +1123,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8695483707323913756, guid: cf46e06c0a0623549ad56fc4f9dde275,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695483707323913757, guid: cf46e06c0a0623549ad56fc4f9dde275,
+        type: 3}
+      propertyPath: m_SurfaceArc
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 8695483707323913758, guid: cf46e06c0a0623549ad56fc4f9dde275,
         type: 3}
       propertyPath: m_Name

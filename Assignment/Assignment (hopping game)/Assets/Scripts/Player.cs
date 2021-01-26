@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //right & left movement
         Vector2 velocity = rb.velocity;
         if (isGrounded)
         {
