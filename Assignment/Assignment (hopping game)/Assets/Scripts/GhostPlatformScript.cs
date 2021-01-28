@@ -7,8 +7,7 @@ public class GhostPlatformScript : MonoBehaviour
 
     public GameObject BrokenPlatformPrefab;
     private float time;
-    public int disappearTime;
-    public int appearTime;
+
     void Start()
     {
 
@@ -24,14 +23,14 @@ public class GhostPlatformScript : MonoBehaviour
     void Pulsate()
     {
 
-        time = Mathf.PingPong(Time.time, disappearTime);
+        time = Mathf.PingPong(Time.time, 2);
 
-        if (time < disappearTime/2)
+        if (time < 1f)
         {
             BrokenPlatformPrefab.GetComponent<Renderer>().enabled = false;
             BrokenPlatformPrefab.GetComponent<Collider2D>().enabled = false;
         }
-        else if (time > appearTime/2)
+        else if (time > 1f)
         {
             BrokenPlatformPrefab.GetComponent<Renderer>().enabled = true;
             BrokenPlatformPrefab.GetComponent<Collider2D>().enabled = true;
