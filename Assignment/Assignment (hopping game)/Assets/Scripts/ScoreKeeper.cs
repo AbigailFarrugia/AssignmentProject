@@ -6,25 +6,27 @@ using UnityEngine.UI;
 public class ScoreKeeper : MonoBehaviour
 {
     [SerializeField]
-    private int currentScore = 0;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    //Adds Score field in Unity 
+    public Text Score;
+
+    //Adds menuScore field in Unity
+    public Text menuScore;
+    private int _currentScore = 0;
+
+        void Start() 
     {
-        
+        //recalls last _currentScore stored
+        menuScore.text = PlayerPrefs.GetInt("MenuScore", 0).ToString();
     }
+    
     public void IncrementScore()
     {
-        //takeing the _currentscore + 1
+        //takeing the _currentScore + 1
+        Score.text = "Score: " + _currentScore.ToString();
+        _currentScore++;
 
-        Text ScoreText = GetComponent<Text>();
-        ScoreText.text = "Score: " + currentScore.ToString();
-        currentScore++;
+        //Storing _currentScore
+        PlayerPrefs.SetInt("MenuScore", _currentScore);
     }
 }
