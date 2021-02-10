@@ -77,18 +77,10 @@ public class Player : MonoBehaviour
         }
 
         if (safePos > transform.position.y)
-        {
+        { 
+
             fallingDistance = safePos - transform.position.y;
-            if (fallingDistance > 1.5f)
-            {
-                GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Platform");
-
-                foreach (GameObject obj in allObjects)
-                {
-                    Destroy(obj);
-
-                }
-            }
+           
             if (fallingDistance > 6f)
             {
                 RestartLevel();
@@ -115,8 +107,5 @@ public class Player : MonoBehaviour
 
 
 
-    public void StillOnPlatform()
-    {
-        //_sittingOnPlatform
-    }
+
 }
