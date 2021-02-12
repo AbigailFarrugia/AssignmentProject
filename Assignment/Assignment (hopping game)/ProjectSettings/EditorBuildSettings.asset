@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Icon & Splash image/Intro Animation.unity
+    guid: 029c10ebc8743e44a84ca81f300a37ca
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 61b8e17448bda34498f5ae07c8e1d69e
   - enabled: 1
